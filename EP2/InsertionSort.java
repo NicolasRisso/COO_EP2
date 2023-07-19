@@ -1,8 +1,7 @@
 public class InsertionSort implements AlgoritmoOrdenacao {
-
     //Arrumar codigo
     @Override
-    public void ordenar(Produto[] produtos, String criterio) {
+    public Produto[] ordenar(Produto[] produtos, String criterio) {
         for(int i = ini; i <= fim; i++){
 
             Produto x = produtos[i];				

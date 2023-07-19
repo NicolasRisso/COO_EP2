@@ -1,3 +1,4 @@
+//GERADOR DE RELATORIOS ANTIGO FUNCIONAL
 import java.io.PrintWriter;
 import java.io.IOException;
 
@@ -108,7 +109,7 @@ public class GeradorDeRelatorios {
 	private void ordena(int ini, int fim){
 
 		if(algoritmo.equals(ALG_INSERTIONSORT)){
-			//INICIO INSERT
+
 			for(int i = ini; i <= fim; i++){
 
 				Produto x = produtos[i];				
@@ -147,7 +148,7 @@ public class GeradorDeRelatorios {
 				}
 
 				produtos[j + 1] = x;
-			} //FINAL INSERT
+			}
 		}
 		else if(algoritmo.equals(ALG_QUICKSORT)){
 
@@ -177,10 +178,6 @@ public class GeradorDeRelatorios {
 		debug();
 
 		ordena(0, produtos.length - 1);
-
-		//IMPLEMENTACION	
-		Ordenar ordenar = new Ordenar();
-		produtos = ordenar.ordenar(produtos, criterio, ini, fim, algoritmo);
 
 		PrintWriter out = new PrintWriter(arquivoSaida);
 
