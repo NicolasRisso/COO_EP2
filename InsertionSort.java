@@ -1,7 +1,7 @@
 public class InsertionSort implements AlgoritmoOrdenacao {
 
     @Override
-    public Produto[] ordenar(Produto[] produtos, String criterio, int ini, int fim) {
+    public Produto[] ordenar(Produto[] produtos, String criterio, int ini, int fim) throws RuntimeException {
         for (int i = ini; i <= fim; i++) {
             Produto x = produtos[i];
             int j = i - 1;

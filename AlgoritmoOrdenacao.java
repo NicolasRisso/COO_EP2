@@ -1,7 +1,7 @@
 public interface AlgoritmoOrdenacao {
-    String CRIT_DESC_CRESC = "DESC_CRESC";
-    String CRIT_PRECO_CRESC = "PRECO_CRESC";
-    String CRIT_ESTOQUE_CRESC = "ESTOQUE_CRESC";
+	String CRIT_DESC_CRESC = "descricao_c";
+	String CRIT_PRECO_CRESC = "preco_c";
+	String CRIT_ESTOQUE_CRESC = "estoque_c";
 
     String ALG_INSERTIONSORT = "quick";
 	String ALG_QUICKSORT = "insertion";
