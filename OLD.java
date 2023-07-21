@@ -1,4 +1,3 @@
-//GERADOR DE RELATORIOS ANTIGO FUNCIONAL
 import java.io.PrintWriter;
 import java.io.IOException;
 
