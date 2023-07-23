@@ -1,7 +1,23 @@
-Foi criada a Interface Algoritmo Ordenacao e as classes que a herdam: InsertionSort e QuickSort, ambas
-feitas a fim de tornar o codigo mais legivel e facil de entender. Comn essas classes foram feitas as
-seguintes implementacoes:
-    - Organizacao dos algoritmos
-    - Criacao de um filtro para descricao, quantidade e preco.
+Andre
+Nicolas Pereira Risso Vieira - 13672262
+Vitor
 
-CSVReader: Classe criada para ler o arquivo produto.csv e escreve-lo em um array de Produto[].
+AlgoritmoOrdenacao, InsertionSort, QuickSort e Ordenar:
+    Foi criada a Interface Algoritmo Ordenacao e as classes que a herdam: InsertionSort e QuickSort, ambas
+    feitas a fim de tornar o codigo mais legivel e facil de entender. Comn essas classes foram feitas as
+    seguintes implementacoes:
+        - Organizacao dos algoritmos
+        - Criacao de um filtro para descricao, quantidade e preco.
+        - Escolher e saber qual algoritmo usar (Ordenar) e depois chamas as outras classes de maneira correta.
+
+CSVReader:
+    Classe criada para ler o arquivo produto.csv, usando uma List, e escreve-lo em um array de Produto[].
+
+ProdutoFormatado:
+    Feito para cuidar da formatacao do texto, em que já lida com a parte da cor e de negrito e italico.
+
+Main:
+    Utilizado para ler a entrada do usuário.
+
+GeradorDeRelatorios:
+    Agora sim, propriamente organizado, exerce apenas a sua funcao, que seria de gerar os relatorios que sao socilitados.

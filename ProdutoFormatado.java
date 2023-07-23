@@ -12,19 +12,16 @@ public class ProdutoFormatado implements Produto{
 
     @Override
     public String getDescricao() {
-        String formatacao;
-        String formatacao_saida;
+        String formatacao = "";
+        String formatacao_saida = "";
         if (produto.isItalico()){
-            formatacao = "<i>";
-            formatacao_saida = "</i>";
-        }else if (produto.isNegrito()){
-            formatacao = "<b>";
-            formatacao_saida = "</b>";
-        }else if (produto.isNegrito() && produto.isItalico()){
-            formatacao = "<b><i>";
-            formatacao_saida = "</b></i>";
-        }  
-        return "<span style=\"color:" + produto.getCor() + "\">" + produto.getDescricao() + "</span>";
+            formatacao = formatacao + "<i>";
+            formatacao_saida = formatacao_saida + "</i>";
+        }if (produto.isNegrito()){
+            formatacao = formatacao + "<b>";
+            formatacao_saida = formatacao_saida + "</b>";
+        }
+        return (formatacao + "<span style=\"color:" + produto.getCor() + "\">" + produto.getDescricao() + "</span>" + formatacao_saida);
     }
 
     @Override
