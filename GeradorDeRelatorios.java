@@ -76,13 +76,12 @@ public class GeradorDeRelatorios {
         if(args.length < 4){
 
 			System.out.println("Uso:");
-			System.out.println("\tjava " + GeradorDeRelatorios.class.getName() + " <algoritmo> <critério de ordenação> <critério de filtragem> <parâmetro de filtragem> <opções de formatação>");
+			System.out.println("\tjava " + GeradorDeRelatorios.class.getName() + " <algoritmo> <critério de ordenação> <critério de filtragem> <parâmetro de filtragem>");
 			System.out.println("Onde:");
 			System.out.println("\talgoritmo: 'quick' ou 'insertion'");
 			System.out.println("\tcriterio de ordenação: 'preco_c' ou 'descricao_c' ou 'estoque_c'");
 			System.out.println("\tcriterio de filtragem: 'todos' ou 'estoque_menor_igual' ou 'categoria_igual' ou 'preco_entre' ou 'com_palavra'"); 
 			System.out.println("\tparâmetro de filtragem: argumentos adicionais necessários para a filtragem, se for passar mais de um, utilize '10,20' por exemplo."); 
-			System.out.println("\topções de formatação: 'negrito' e/ou 'italico'");
 			System.out.println();
 			System.exit(1);
 		}
@@ -91,21 +90,6 @@ public class GeradorDeRelatorios {
 		String opcao_criterio_ord = args[1];
 		String opcao_criterio_filtro = args[2];
 		String opcao_parametro_filtro = args[3];
-		
-		String [] opcoes_formatacao = new String[2];
-		opcoes_formatacao[0] = args[4];
-        if (args.length <= 5) opcoes_formatacao[1] = "";
-        else opcoes_formatacao[1] = args[5];
-		
-
-        boolean negrito = false;
-        boolean italico = false;
-
-        if (opcoes_formatacao[0].equals("negrito") || opcoes_formatacao[1].equals("negrito")) negrito = true;
-        if (opcoes_formatacao[0].equals("italico") || opcoes_formatacao[1].equals("italico")) italico = true;
-
-        System.out.println(negrito + " " + italico);
-
         //FIM DA ENTRADA DO USUARIO
 
         CSVReader csvReader = new CSVReader();
