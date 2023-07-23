@@ -1,6 +1,6 @@
-Andre
+Andre Fabiano de Carvalho - 13672425
 Nicolas Pereira Risso Vieira - 13672262
-Vitor
+Vitor Borges de Santana - 13720129
 
 AlgoritmoOrdenacao, InsertionSort, QuickSort e Ordenar:
     Foi criada a Interface Algoritmo Ordenacao e as classes que a herdam: InsertionSort e QuickSort, ambas
