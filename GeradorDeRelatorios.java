@@ -14,6 +14,8 @@ public class GeradorDeRelatorios {
 
     public static final String FILTRO_ESTOQUE_MENOR_OU_IQUAL_A = "estoque_menor_igual";
 	public static final String FILTRO_CATEGORIA_IGUAL_A = "categoria_igual";
+    public static final String FILTRO_PRECO_ENTRE_X_Y = "preco_entre";
+    public static final String FILTRO_COM_PALAVRA_NA_DESC = "com_palavra";
 
     public void gerarRelatorio(Produto[] produtos, String algoritmo, String criterio, String filtro, String parametro) {
         
@@ -27,6 +29,13 @@ public class GeradorDeRelatorios {
             writer.println("<table border=\"1\">");
             writer.println("<tr><th>ID</th><th>DESCRIÇÃO</th><th>CATEGORIA</th><th>QUANTIDADE_ESTOQUE</th><th>PREÇO</th><th>NEGRITO</th><th>ITALICO</th><th>COR</th></tr>");
 
+            //Prepara o filtro
+            int[] maxmin = new int[2];
+            if (filtro.equals(FILTRO_PRECO_ENTRE_X_Y)){
+                String[] partes = parametro.split(",");
+                for (int i = 0; i < partes.length; i++) maxmin[i] = Integer.parseInt(partes[i]);
+            }
+
             for (Produto p : produtos) {
                 //filtro
                 if (filtro.equals(FILTRO_ESTOQUE_MENOR_OU_IQUAL_A)){
@@ -35,10 +44,16 @@ public class GeradorDeRelatorios {
                 if (filtro.equals(FILTRO_CATEGORIA_IGUAL_A)){
                     if (!(p.getCategoria().equals(parametro))) continue;
                 }
+                if (filtro.equals(FILTRO_PRECO_ENTRE_X_Y)){
+                    if (p.getPreco() < maxmin[0] || p.getPreco() > maxmin[1]) continue;
+                }
+                if (filtro.equals(FILTRO_COM_PALAVRA_NA_DESC)){
+                    if (!(p.getDescricao().contains(parametro))) continue;
+                }
 
                 writer.println("<tr>");
                 writer.println("<td>" + p.getId() + "</td>");
-                writer.println("<td>" + p.getDescricao() + "</td>");
+                writer.println("<td>" + "<span style=\"color:" + p.getCor() + "\">" + p.getDescricao() + "</span>" + "</td>");
                 writer.println("<td>" + p.getCategoria() + "</td>");
                 writer.println("<td>" + p.getQtdEstoque() + "</td>");
                 writer.println("<td>" + p.getPreco() + "</td>");
@@ -65,8 +80,8 @@ public class GeradorDeRelatorios {
 			System.out.println("Onde:");
 			System.out.println("\talgoritmo: 'quick' ou 'insertion'");
 			System.out.println("\tcriterio de ordenação: 'preco_c' ou 'descricao_c' ou 'estoque_c'");
-			System.out.println("\tcriterio de filtragem: 'todos' ou 'estoque_menor_igual' ou 'categoria_igual'"); 
-			System.out.println("\tparâmetro de filtragem: argumentos adicionais necessários para a filtragem"); 
+			System.out.println("\tcriterio de filtragem: 'todos' ou 'estoque_menor_igual' ou 'categoria_igual' ou 'preco_entre' ou 'com_palavra'"); 
+			System.out.println("\tparâmetro de filtragem: argumentos adicionais necessários para a filtragem, se for passar mais de um, utilize '10,20' por exemplo."); 
 			System.out.println("\topções de formatação: 'negrito' e/ou 'italico'");
 			System.out.println();
 			System.exit(1);
