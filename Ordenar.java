@@ -7,6 +7,9 @@ public class Ordenar {
     public Produto[] ordena(Produto[] produtos, String algoritmo, String criterio, int ini, int fim) {
         AlgoritmoOrdenacao algoritmoOrdenacao;
         algoritmoOrdenacao = new InsertionSort(); //Inicia o algoritmo como insertion sort por padrão para utiliza-lo na busca do if.
+        if (algoritmo.equals(algoritmoOrdenacao.ALG_INSERTIONSORT)) {
+            algoritmoOrdenacao = new InsertionSort();
+        }
         if (algoritmo.equals(algoritmoOrdenacao.ALG_QUICKSORT)) {
             algoritmoOrdenacao = new QuickSort();
         }
